@@ -134,7 +134,7 @@
 
         const config = {
           method: 'POST',
-          url: `${keys.BASE_URL}/api/v1/users/login`,
+          url: `${keys.BASE_URL}/api/v1/admins/login`,
           data: JSON.stringify(loginForm),
           headers: { 
             "Content-Type": "application/json"

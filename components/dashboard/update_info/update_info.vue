@@ -254,13 +254,6 @@
                 
             </div><!--columns-->
 
-            <div class="columns">
-                <div class="column is-offset-9 is-3">
-                    <figure class="avatar has-text-centered image is-1by1 ">
-                        <img :src="`${this.API_SIGNATURE}${this.$store.state.user_details.user.signature}`" >
-                    </figure>
-                </div>
-            </div>
 
         </div><!--section-->
 
@@ -284,7 +277,6 @@
 
         data(){
             return{
-                API_SIGNATURE: `${keys.BASE_URL}${keys.API_SIGNATURE}/`,
                 API_PROFILE: `${keys.BASE_URL}${keys.API_PROFILE}/`,
 
                 isLoaderActive : false,
@@ -374,7 +366,7 @@
 
                 const config = {
                     method: 'PUT',
-                    url: `${keys.BASE_URL}/api/v1/users/${this.$store.state.user_details.user._id}`,
+                    url: `${keys.BASE_URL}/api/v1/admins/${this.$store.state.user_details.user._id}`,
                     data: this.serializeUpdateNameForm() ,
                     headers: { 
                         "Content-Type": "application/json",
@@ -399,7 +391,7 @@
 
                 const config = {
                     method: 'PUT',
-                    url: `${keys.BASE_URL}/api/v1/users/password/${this.$store.state.user_details.user._id}`,
+                    url: `${keys.BASE_URL}/api/v1/admins/password/${this.$store.state.user_details.user._id}`,
                     data: this.serializeUpdatePasswordForm() ,
                     headers: { 
                         "Content-Type": "application/json",
@@ -453,7 +445,7 @@
                     
                 const config = {
                     method: 'PUT',
-                    url: `${keys.BASE_URL}/api/v1/users/${this.$store.state.user_details.user._id}`,
+                    url: `${keys.BASE_URL}/api/v1/admins/${this.$store.state.user_details.user._id}`,
                     data: {
                         "avatar": filename
                     },
